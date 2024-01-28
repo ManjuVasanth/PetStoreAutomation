@@ -18,12 +18,7 @@ public class Routes {
 		public static String storeUpdate_url= base_url+"/user/{storename}";
 		public static String storeDelete_url= base_url+"/user/{storename}";
 
-		
-		//Pet Module
-		public static String petPost_url= base_url+"/pet";
-		public static String petGet_url= base_url+"/pet/{petname}";
-		public static String petUpdate_url= base_url+"/pet/{petname}";
-		public static String petDelete_url= base_url+"/pet/{petname}";
+	
 		
 }
 

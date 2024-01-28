@@ -10,7 +10,7 @@ import api.payload.User;
 import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
-
+//CRUD methods
 public class UserEndPoints {
 	public static Response createUser(User payload) {
 		
