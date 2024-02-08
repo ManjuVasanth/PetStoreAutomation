@@ -1,5 +1,5 @@
 package api.payload;
-
+// POJO class 
 public class User {
 
 	int id;

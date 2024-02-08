@@ -9,10 +9,11 @@ import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 
 import api.endpoints.UserEndPoints;
+import api.endpoints.UserEndPoints2;
 import api.payload.User;
 import io.restassured.response.Response;
 
-public class UserTests {
+public class UserTests2 {
 	Faker faker;
 	User userPayload;
 	public Logger logger;
@@ -48,7 +49,7 @@ public class UserTests {
 	@Test(priority = 1)
 	public void testPostUser() {
 logger.info("******Creating User Info ******");
-		Response response = UserEndPoints.createUser(userPayload);
+		Response response = UserEndPoints2.createUser(userPayload);
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(), 200);
 		logger.info("****** User is created ******");
@@ -57,7 +58,7 @@ logger.info("******Creating User Info ******");
 	@Test(priority = 2)
 	public void testGetUserByName() {
 		logger.info("******Reading User info ******");
-		Response response = UserEndPoints.readUser(userPayload.getUsername());
+		Response response = UserEndPoints2.readUser(userPayload.getUsername());
 		response.then().log().all();
 		//Assert.assertEquals(response.getStatusCode(), 200);
 		logger.info("******User info is displayed ******");
@@ -70,16 +71,14 @@ logger.info("******Creating User Info ******");
 		userPayload.setFirstName(faker.name().firstName());
 		userPayload.setLastName(faker.name().lastName());
 		userPayload.setEmail(faker.internet().safeEmailAddress());
-		Response response = UserEndPoints.updateUser(userPayload.getUsername(), userPayload);
-		response.then().log().all();
+		Response response = UserEndPoints2.updateUser(userPayload.getUsername(), userPayload);
 		Assert.assertEquals(response.getStatusCode(), 200);
-		
 		logger.info("****** User is updated ******");
 	}
 	@Test(priority = 4 )
 	public void testDeleteUserByName() {
 		logger.info("******Deleting User info ******");
-		Response response = UserEndPoints.deleteUser(userPayload.getUsername());
+		Response response = UserEndPoints2.deleteUser(userPayload.getUsername());
 		response.then().log().all();
 		//Assert.assertEquals(response.getStatusCode(), 200);
 		logger.info("****** User is deleted ******");

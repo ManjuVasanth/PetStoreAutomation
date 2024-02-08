@@ -1,9 +1,9 @@
 package api.endpoints;
 
 public class Routes {
-	
+	// https://petstore.swagger.io/v2/user
 	// maintain only urls
-		public static String base_url = "https://petstore.swagger.io/v2/";
+		public static String base_url = "https://petstore.swagger.io/v2";
 		
 		
 		//user module
