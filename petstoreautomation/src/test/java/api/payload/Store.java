@@ -1,24 +1,28 @@
 package api.payload;
 
+import java.util.Date;
+
+import lombok.Data;
+@Data
 public class Store {
 	int id;
-	int petId;
+	String petIdNum;
 	int quantity;
-	String shipDate;
+	Date shipDate;
 	String status;
 	boolean complete;
 
-	public int getId() {
+	/*public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getPetId() {
-		return petId;
+	public String getPetId() {
+		return petIdNum;
 	}
-	public void setPetId(int petId) {
-		this.petId = petId;
+	public String setPetId(String petIDNum) {
+		return this.petIdNum = petIDNum;
 	}
 	public int getQuantity() {
 		return quantity;
@@ -26,11 +30,11 @@ public class Store {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public String getShipDate() {
+	public Date getShipDate() {
 		return shipDate;
 	}
-	public void setShipDate(String shipDate) {
-		this.shipDate = shipDate;
+	public Date setShipDate(Date date) {
+		return this.shipDate = date;
 	}
 	public String getStatus() {
 		return status;
@@ -44,5 +48,5 @@ public class Store {
 	public void setComplete(boolean complete) {
 		this.complete = complete;
 	}
-	
+	*/
 }

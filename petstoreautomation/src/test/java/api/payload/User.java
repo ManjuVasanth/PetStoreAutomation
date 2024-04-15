@@ -1,5 +1,10 @@
 package api.payload;
+
+import lombok.Data;
+
 // POJO class 
+//Lombok is used to reduce boilerplate code in Rest Assured API testing
+@Data
 public class User {
 
 	int id;
@@ -11,7 +16,7 @@ public class User {
 	String phone;
 	int userStatus=0;
 	
-	public int getId() {
+	/*public int getId() {
 		return id;
 	}
 	public void setId(int id) {
@@ -59,5 +64,5 @@ public class User {
 	public void setUserStatus(int userStatus) {
 		this.userStatus = userStatus;
 	}
-	
+	*/
 }

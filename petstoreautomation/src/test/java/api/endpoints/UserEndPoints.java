@@ -10,7 +10,7 @@ import api.payload.User;
 import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
-//CRUD methods
+//created to perform CRUD methods implementations
 public class UserEndPoints {
 	public static Response createUser(User payload) {
 		
@@ -25,7 +25,7 @@ public class UserEndPoints {
 	public static Response readUser(String userName) {
 		
 		Response response = given()
-		.pathParam("username", "userName")
+		.pathParam("username", userName)
 		.when()
 		.get(Routes.get_url);
 		return response;
@@ -35,7 +35,7 @@ public static Response updateUser(String userName,User payload) {
 		Response response = given()
 		.contentType(ContentType.JSON)
 		.accept(ContentType.JSON)
-		.pathParam("username", "userName")
+		.pathParam("username",userName)
 		.body(payload)
 		.when()
 		.put(Routes.update_url);
@@ -44,7 +44,7 @@ public static Response updateUser(String userName,User payload) {
 public static Response deleteUser(String userName) {
 	
 	Response response = given()
-	.pathParam("username", "userName")
+	.pathParam("username",userName)
 	.when()
 	.delete(Routes.delete_url);
 	return response;

@@ -21,26 +21,26 @@ public static Response createStore(Store payload) {
 	public static Response readStore(int orderId) {
 		
 		Response response = given()
-		.pathParam("orderId", "orderid")
+		.pathParam("orderId", orderId)
 		.when()
 		.get(Routes.storeGet_url);
 		return response;
 	}
-public static Response updateStore(int orderid,Store payload) {
+public static Response updateStore(int orderId,Store payload) {
 		
 		Response response = given()
 		.contentType(ContentType.JSON)
 		.accept(ContentType.JSON)
-		.pathParam("orderId", "orderid")
+		.pathParam("orderId", orderId)
 		.body(payload)
 		.when()
 		.put(Routes.storeUpdate_url);
 		return response;
 	}
-public static Response deleteStore(int orderid) {
+public static Response deleteStore(int orderId) {
 	
 	Response response = given()
-	.pathParam("orderId", "orderid")
+	.pathParam("orderId", orderId)
 	.when()
 	.delete(Routes.storeDelete_url);
 	return response;
